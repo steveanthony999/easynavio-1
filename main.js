@@ -2,18 +2,28 @@ const navBuilderBg = document.getElementById('nav-builder');
 const colorWellColor = document.getElementById('colorWellColor');
 const headerColor = document.getElementById('headerColor');
 const headerImg = document.getElementById('headerImg');
+const fixedNav = document.getElementById('fixed');
+const unFixedNav = document.getElementById('unfixed');
+const navbar = document.getElementById('nav');
 
 let colorWell;
+let navColorWell;
+
 const defaultColor = '#ffffff';
+const navDefaultColor = '#333333';
 
-window.addEventListener('load', startup, false);
+// Change Landing Page Color
+// Change Landing Page Color
+// Change Landing Page Color
 
-function startup() {
-  colorWell = document.querySelector('#colorWell');
-  colorWell.value = defaultColor;
-  colorWell.addEventListener('input', updateFirst, false);
-  colorWell.select();
-}
+// window.addEventListener('load', startup, false);
+
+// function startup() {
+colorWell = document.querySelector('#colorWell');
+colorWell.value = defaultColor;
+colorWell.addEventListener('input', updateFirst, false);
+colorWell.select();
+// }
 
 function updateFirst(event) {
   if (navBuilderBg) {
@@ -27,6 +37,8 @@ function updateFirst(event) {
 }
 
 // CHANGE COLOR DYNAMICALLY ACCORDING TO BACKGROUND COLOR
+// CHANGE COLOR DYNAMICALLY ACCORDING TO BACKGROUND COLOR
+// CHANGE COLOR DYNAMICALLY ACCORDING TO BACKGROUND COLOR
 
 function getContrast(hexcolor) {
   hexcolor = hexcolor.replace('#', '');
@@ -38,10 +50,8 @@ function getContrast(hexcolor) {
 }
 
 // CHANGE NAV POSITION
-
-const fixedNav = document.getElementById('fixed');
-const unFixedNav = document.getElementById('unfixed');
-const navbar = document.getElementById('nav');
+// CHANGE NAV POSITION
+// CHANGE NAV POSITION
 
 fixedNav.onclick = () => {
   navbar.style.position = 'fixed';
@@ -50,3 +60,20 @@ fixedNav.onclick = () => {
 unFixedNav.onclick = () => {
   navbar.style.position = 'static';
 };
+
+// CHANGE NAV BACKGROUND COLOR
+// CHANGE NAV BACKGROUND COLOR
+// CHANGE NAV BACKGROUND COLOR
+
+navColorWell = document.querySelector('#navColorWell');
+navColorWell.value = navDefaultColor;
+navColorWell.addEventListener('input', updateFirstNav, false);
+navColorWell.select();
+// }
+
+function updateFirstNav(event) {
+  if (navbar) {
+    navbar.style.backgroundColor = event.target.value;
+    navColorWellColor.innerHTML = event.target.value;
+  }
+}
