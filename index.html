@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Easy Nav</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>Header</header>
+        <section id="attributes">
+            <!-- Background color for landing page -->
+            <label for="colorWell">Choose a color that mostly resembles the background of your landing page</label>
+            <input type="color" value="#ffffff" id="colorWell">
+            <label for="colorWell" id="colorWellColor">#ffffff</label>
+            <hr>
+            <br>
+            <!-- Position of nav -->
+            <p>I'd like my nav to be</p>
+            <input type="radio" name="nav-position" id="fixed" value='fixed' checked>
+            <label for="fixed">Fixed</label>
+            <input type="radio" name="nav-position" id="unfixed" value='unfixed'>
+            <label for="unfixed">Not Fixed</label>
+            <hr>
+            <br>
+        </section>
+        <section id="nav-builder">
+            <div id="nav"></div>
+            <div id="section-1">
+                <img src="./assets/img-cute-black.png" id="headerImg" alt="cute-image">
+                <h2 id='headerColor'>Ah Landing Page</h2>
+            </div>
+            <div id="section-2">
+                <img src="./assets/img-cute-black.png" alt="cute-image">
+                <h2>Ah Section</h2>
+            </div>
+        </section>
+        <footer>Footer</footer>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
