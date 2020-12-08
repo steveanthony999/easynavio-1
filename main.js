@@ -5,6 +5,8 @@ const headerImg = document.getElementById('headerImg');
 const fixedNav = document.getElementById('fixed');
 const unFixedNav = document.getElementById('unfixed');
 const navbar = document.getElementById('nav');
+const cssNavBgColor = document.getElementById('css-nav-bg-color');
+const cssNavPosition = document.getElementById('css-nav-position');
 
 let colorWell;
 let navColorWell;
@@ -55,10 +57,12 @@ function getContrast(hexcolor) {
 
 fixedNav.onclick = () => {
   navbar.style.position = 'fixed';
+  cssNavPosition.textContent = 'fixed';
 };
 
 unFixedNav.onclick = () => {
   navbar.style.position = 'static';
+  cssNavPosition.textContent = 'static';
 };
 
 // CHANGE NAV BACKGROUND COLOR
@@ -69,11 +73,11 @@ navColorWell = document.querySelector('#navColorWell');
 navColorWell.value = navDefaultColor;
 navColorWell.addEventListener('input', updateFirstNav, false);
 navColorWell.select();
-// }
 
 function updateFirstNav(event) {
   if (navbar) {
     navbar.style.backgroundColor = event.target.value;
     navColorWellColor.innerHTML = event.target.value;
+    cssNavBgColor.innerHTML = event.target.value;
   }
 }

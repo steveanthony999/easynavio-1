@@ -15,11 +15,26 @@
 
 #nav-builder {
   width: 80vw;
-  min-height: 800px;
+  /* min-height: 800px; */
+  min-height: 0;
   max-height: 800px;
   border: 1px solid black;
   overflow: scroll;
 }
+
+/* #nav-wrapper {
+  position: relative;
+  width: 80vw;
+  height: 40px;
+  background-color: #111;
+}
+
+#outer-nav {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  background-color: #666;
+} */
 
 #nav {
   position: fixed;
@@ -45,4 +60,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+
+#code-section {
+  width: 80vw;
+  /* min-height: 300px; */
+  min-height: 0;
+  max-height: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#html-code,
+#css-code,
+#javascript-code {
+  width: 32%;
+  border: 1px solid black;
+  overflow: scroll;
 }
