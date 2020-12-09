@@ -11,36 +11,96 @@
 <body>
     <div class="container">
         <header>Header</header>
+        <!-- ATTRIBUTES SECTION -->
+        <!-- ATTRIBUTES SECTION -->
+        <!-- ATTRIBUTES SECTION -->
         <section id="attributes">
+            <br>
+            <h4>DESIGN YOUR NAVBAR</h4>
+            <br>
+            <hr>
+            <br>
             <!-- Background color for landing page -->
-            <label for="colorWell">Choose a color that mostly resembles the background of your landing page</label>
+            <label>The color that mostly resembles the background of my landing page is</label>
             <input type="color" value="#ffffff" id="colorWell">
             <label for="colorWell" id="colorWellColor">#ffffff</label>
+            <br>
+            <br>
             <hr>
             <br>
             <!-- Position of nav -->
-            <p>I'd like my nav to be</p>
+            <label for="nav-position">I'd like my nav to be</label>
             <input type="radio" name="nav-position" id="fixed" value='fixed' checked>
             <label for="fixed">Fixed</label>
             <input type="radio" name="nav-position" id="unfixed" value='unfixed'>
             <label for="unfixed">Not Fixed</label>
+            <br>
+            <br>
             <hr>
             <br>
             <!-- Background color for nav -->
-            <p>I'd like the background of my nav to be</p>
+            <label for="nav-colo">I'd like the background of my nav to be</label>
             <input type="radio" name="nav-color" id="transparent" value='transparent'>
             <label for="transparent">Transparent</label>
             <input type="radio" name="nav-color" id="filled" value='filled' checked>
             <label for="filled">Filled With Color</label>
-            <input type="color" value="#333333" id="navColorWell">
-            <label for="navColorWell" id="navColorWellColor">#333333</label>
+            <input type="color" value="#333333" id="nav-color-well">
+            <label for="nav-color-well" id="nav-color-well-color">#333333</label>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <!-- Text color for nav -->
+            <label>I'd like the text color of my nav to be</label>
+            <input type="color" value="#ffffff" id="nav-text-color-well">
+            <label for="nav-text-color-well" id="nav-text-color-well-color">#ffffff</label>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <!-- Container for the nav logo and links -->
+            <label for="nav-container">I'd like my nav logo and links to be</label>
+            <input type="radio" name="nav-container" id="wide" value='wide' checked>
+            <label for="wide">Wide</label>
+            <input type="radio" name="nav-container" id="contained" value='contained'>
+            <label for="contained">Contained</label>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <!-- Height of the nav -->
+            <label for="nav-height">I'd like the height of my nav to be</label>
+            <input type="radio" name="nav-height" id="skinny" value='skinny'>
+            <label for="skinny">Skinny</label>
+            <input type="radio" name="nav-height" id="medium" value='medium' checked>
+            <label for="medium">Medium</label>
+            <input type="radio" name="nav-height" id="fat" value='fat'>
+            <label for="fat">Fat</label>
+            <input type="radio" name="nav-height" id="super-fat" value='super-fat'>
+            <label for="super-fat">Super Fat</label>
+            <br>
+            <br>
             <hr>
             <br>
         </section>
+        <!-- NAV BUILDER -->
+        <!-- NAV BUILDER -->
+        <!-- NAV BUILDER -->
         <section id="nav-builder">
             <!-- <div id="nav-wrapper"> -->
             <!-- <div id="outer-nav"> -->
-            <div id="nav"></div>
+            <div id="nav">
+                <div id="inner-nav">
+                    <p>LOGO</p>
+                    <div id="nav-links">
+                        <p>Home</p>
+                        <p>About</p>
+                        <p>Blog</p>
+                        <p>Contact</p>
+                        <p>Shop</p>
+                    </div>
+                </div>
+            </div>
             <!-- </div> -->
             <!-- </div> -->
             <div id="section-1">
@@ -52,27 +112,65 @@
                 <h2>Ah Section</h2>
             </div>
         </section>
+        <!-- CODE SECTION -->
+        <!-- CODE SECTION -->
+        <!-- CODE SECTION -->
         <section id="code-section">
             <div id="html-code">
-                <h2>HTML</h2>
+                <br>
+                <h4>HTML</h4>
+                <br>
+                <hr>
+                <br>
                 <code>
-                    &lt;nav&gt;<span></span>&lt;/nav&gt;
+                    &lt;nav&gt;<br>
+                    &nbsp;&nbsp;&lt;div id="nav-container"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="nav-logo"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- YOUR LOGO HERE --&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="nav-links"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- YOUR LINKS --&gt;&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- WILL GO HERE --&gt;&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- ADD OR REMOVE --&gt;&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- AS MANY AS --&gt;&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- YOU'D LIKE --&gt;&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&lt;/div&gt;<br>
+                    &lt;/nav&gt;
                 </code>
             </div>
             <div id="css-code">
-                <h2>CSS</h2>
+                <br>
+                <h4>CSS</h4>
+                <br>
+                <hr>
+                <br>
                 <code>
-                    <!-- <pre> -->
                     nav {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;background-color: <span id='css-nav-bg-color'>#333333</span>;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;width: <span id='css-nav-width'>100%</span>;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;position: <span id='css-nav-position'>fixed</span>;<br>
+                    &nbsp;&nbsp;background-color: <span id='css-nav-bg-color'>#333333</span>;<br>
+                    &nbsp;&nbsp;width: <span id='css-nav-width'>100%</span>;<br>
+                    &nbsp;&nbsp;position: <span id='css-nav-position'>fixed</span>;<br>
+                    &nbsp;&nbsp;color: <span id='css-nav-text-color'>#ffffff</span>;<br>
+                    &nbsp;&nbsp;padding: <span id='css-nav-padding-tb'>16px</span>&nbsp;
+                    <span id='css-nav-padding-lr'>32px</span>;<br>
                     }
-                    <!-- </pre> -->
+                    <br>
+                    <br>
+                    #nav-container {<br>
+                    &nbsp;&nbsp;display: <span>flex</span>;<br>
+                    &nbsp;&nbsp;align-items: <span>center</span>;<br>
+                    &nbsp;&nbsp;justify-content: <span>space-between</span>;<br>
+                    <span id='css-nav-container-width-text'>&nbsp;&nbsp;width:&nbsp;1100px&nbsp;<br></span>
+                    <span id='css-nav-container-margin-text'>&nbsp;&nbsp;margin:&nbsp;0&nbsp;auto&nbsp;<br></span>
+                    }
                 </code>
             </div>
             <div id="javascript-code">
-                <h2>JAVASCRIPT</h2>
+                <br>
+                <h4>JAVASCRIPT</h4>
+                <br>
+                <hr>
+                <br>
             </div>
         </section>
         <footer>Footer</footer>
