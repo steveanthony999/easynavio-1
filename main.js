@@ -16,6 +16,7 @@ const navLinksText = document.querySelector('#inner-nav');
 const navLinksTextWell = document.getElementById('nav-text-color-well');
 const navLinksTextWellColor = document.getElementById('nav-text-color-well-color');
 const cssNavLinksTextColor = document.getElementById('css-nav-text-color');
+const cssNavLogoTextColor = document.getElementById('css-nav-logo-text-color');
 const cssNavContainerWidthText = document.getElementById('css-nav-container-width-text');
 const cssNavContainerMarginText = document.getElementById('css-nav-container-margin-text');
 const wideNavContainer = document.getElementById('wide');
@@ -25,6 +26,9 @@ const navHeightMedium = document.getElementById('medium');
 const navHeightFat = document.getElementById('fat');
 const navHeightSuperFat = document.getElementById('super-fat');
 const cssNavHeightText = document.getElementById('css-nav-padding-tb');
+const shrinkMeCheckbox = document.getElementById('shrink-me');
+const jsNavOnScroll = document.getElementById('nav-on-scroll');
+const jsPaddingHeightText = document.getElementById('js-padding-height-text');
 
 // let colorWell;
 
@@ -74,11 +78,24 @@ function getContrast(hexcolor) {
 fixedNav.onclick = () => {
   navbar.style.position = 'fixed';
   cssNavPosition.textContent = 'fixed';
+  if (shrinkMeCheckbox.checked === true) {
+    shrinkMeCheckbox.disabled = false;
+    if (cssNavHeightText.textContent === '32px') {
+      jsPaddingHeightText.textContent = '32px';
+    } else if (cssNavHeightText.textContent === '64px') {
+      jsPaddingHeightText.textContent = '64px';
+    }
+    jsNavOnScroll.style.display = 'block';
+  }
 };
 
 unFixedNav.onclick = () => {
   navbar.style.position = 'static';
   cssNavPosition.textContent = 'static';
+  if (shrinkMeCheckbox.disabled === false) {
+    shrinkMeCheckbox.disabled = true;
+    jsNavOnScroll.style.display = 'none';
+  }
 };
 
 // CHANGE NAV BACKGROUND COLOR
@@ -134,6 +151,7 @@ function updateFirstNavText(event) {
     navLinksText.style.color = event.target.value;
     navLinksTextWellColor.textContent = event.target.value;
     cssNavLinksTextColor.textContent = event.target.value;
+    cssNavLogoTextColor.textContent = event.target.value;
   }
 }
 
@@ -167,19 +185,60 @@ navbar.style.padding = '16px 32px';
 navHeightSkinny.onclick = () => {
   navbar.style.padding = '8px 32px';
   cssNavHeightText.textContent = '8px';
+  shrinkMeCheckbox.disabled = true;
 };
 
 navHeightMedium.onclick = () => {
   navbar.style.padding = '16px 32px';
   cssNavHeightText.textContent = '16px';
+  shrinkMeCheckbox.disabled = true;
 };
 
 navHeightFat.onclick = () => {
   navbar.style.padding = '32px 32px';
   cssNavHeightText.textContent = '32px';
+  if (cssNavPosition.textContent === 'fixed') {
+    shrinkMeCheckbox.disabled = false;
+    jsPaddingHeightText.textContent = '32px';
+  }
 };
 
 navHeightSuperFat.onclick = () => {
   navbar.style.padding = '64px 32px';
   cssNavHeightText.textContent = '64px';
+  if (cssNavPosition.textContent === 'fixed') {
+    shrinkMeCheckbox.disabled = false;
+    jsPaddingHeightText.textContent = '64px';
+  }
+};
+
+// SHRINK NAV
+// SHRINK NAV
+// SHRINK NAV
+
+shrinkMeCheckbox.onclick = () => {
+  if (shrinkMeCheckbox.checked === true) {
+    jsNavOnScroll.style.display = 'block';
+  } else {
+    jsNavOnScroll.style.display = 'none';
+  }
+};
+
+navBuilderBg.onscroll = () => {
+  if (shrinkMeCheckbox.disabled === false) {
+    if (shrinkMeCheckbox.checked === true) {
+      if (navBuilderBg.scrollTop > 50) {
+        navbar.style.transition = '0.4s';
+        navbar.style.padding = '16px 32px';
+      } else {
+        if (cssNavHeightText.textContent === '32px') {
+          navbar.style.transition = '0.4s';
+          navbar.style.padding = '32px 32px';
+        } else if (cssNavHeightText.textContent === '64px') {
+          navbar.style.transition = '0.4s';
+          navbar.style.padding = '64px 32px';
+        }
+      }
+    }
+  }
 };

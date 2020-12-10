@@ -68,6 +68,7 @@ a {
   padding: 16px 32px;
   background-color: #333333;
   color: #fff;
+  transform-origin: top;
 }
 
 #inner-nav {
@@ -131,4 +132,8 @@ a {
 #code-section #css-code h4,
 #code-section #javascript-code h4 {
   margin-left: 1rem;
+}
+
+#nav-on-scroll {
+  display: none;
 }
