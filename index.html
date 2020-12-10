@@ -91,6 +91,21 @@
             <br>
             <hr>
             <br>
+            <!-- Nav links on hover -->
+            <label for="nav-height">I'd like this hover effect on my links</label>
+            <input type="radio" name="hover-links" id="no-effect" value='no-effect' checked>
+            <label for="no-effect">No effect</label>
+            <input type="radio" name="hover-links" id="scale" value='scale'>
+            <label for="scale">Scale a li'l bit</label>
+            <input type="radio" name="hover-links" id="change-color" value='change-color'>
+            <label for="change-color">Change the color</label>
+            <input type="radio" name="hover-links" id="scale-and-change-color" value='scale-and-change-color'>
+            <label for="scale-and-change-color">Scale a li'l & change the color</label>
+            <input type="color" value="#aa77ff" id="hover-link-color-well">
+            <br>
+            <br>
+            <hr>
+            <br>
         </section>
         <!-- NAV BUILDER -->
         <!-- NAV BUILDER -->
@@ -177,6 +192,7 @@
                     <br>
                     #nav-links a {<br>
                     &nbsp;&nbsp;text-decoration: <span>none</span>;<br>
+                    &nbsp;&nbsp;margin-left: <span>16px</span>;<br>
                     &nbsp;&nbsp;color: <span id='css-nav-text-color'>#ffffff</span>;<br>
                     }
                 </code>

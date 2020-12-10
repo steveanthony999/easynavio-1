@@ -85,12 +85,22 @@ a {
 
 #nav-links p {
   margin-left: 1rem;
+  transition: 0.2s;
+  position: relative;
+  /* overflow: hidden; uncomment for underline from left effect */
 }
 
-#nav-links p:hover,
-#inner-nav p:hover {
+#nav-links p:hover {
   cursor: pointer;
 }
+
+/* Scale Hover */
+/* Scale Hover */
+/* Scale Hover */
+
+/* #nav-links p:hover { */
+/* transform: scale(1.1); */
+/* } */
 
 #section-1 {
   width: 100%;

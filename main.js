@@ -29,6 +29,11 @@ const cssNavHeightText = document.getElementById('css-nav-padding-tb');
 const shrinkMeCheckbox = document.getElementById('shrink-me');
 const jsNavOnScroll = document.getElementById('nav-on-scroll');
 const jsPaddingHeightText = document.getElementById('js-padding-height-text');
+const hoverNoEffect = document.getElementById('no-effect');
+const hoverScaleEffect = document.getElementById('scale');
+const hoverColorEffect = document.getElementById('change-color');
+const hoverScaleAndColorEffect = document.getElementById('scale-and-change-color');
+const hoverLinkColorWell = document.getElementById('hover-link-color-well');
 
 // let colorWell;
 
@@ -186,12 +191,14 @@ navHeightSkinny.onclick = () => {
   navbar.style.padding = '8px 32px';
   cssNavHeightText.textContent = '8px';
   shrinkMeCheckbox.disabled = true;
+  jsNavOnScroll.style.display = 'none';
 };
 
 navHeightMedium.onclick = () => {
   navbar.style.padding = '16px 32px';
   cssNavHeightText.textContent = '16px';
   shrinkMeCheckbox.disabled = true;
+  jsNavOnScroll.style.display = 'none';
 };
 
 navHeightFat.onclick = () => {
@@ -201,6 +208,9 @@ navHeightFat.onclick = () => {
     shrinkMeCheckbox.disabled = false;
     jsPaddingHeightText.textContent = '32px';
   }
+  if (jsNavOnScroll.style.display === 'none' && shrinkMeCheckbox.checked === true) {
+    jsNavOnScroll.style.display = 'block';
+  }
 };
 
 navHeightSuperFat.onclick = () => {
@@ -209,6 +219,9 @@ navHeightSuperFat.onclick = () => {
   if (cssNavPosition.textContent === 'fixed') {
     shrinkMeCheckbox.disabled = false;
     jsPaddingHeightText.textContent = '64px';
+  }
+  if (jsNavOnScroll.style.display === 'none' && shrinkMeCheckbox.checked === true) {
+    jsNavOnScroll.style.display = 'block';
   }
 };
 
@@ -239,6 +252,63 @@ navBuilderBg.onscroll = () => {
           navbar.style.padding = '64px 32px';
         }
       }
+    }
+  }
+};
+
+// Link Hover Effects
+// Link Hover Effects
+// Link Hover Effects
+
+hoverNoEffect.onclick = () => {
+  loadEffects();
+};
+
+hoverScaleEffect.onclick = () => {
+  loadEffects();
+};
+
+hoverColorEffect.onclick = () => {
+  loadEffects();
+};
+
+hoverScaleAndColorEffect.onclick = () => {
+  loadEffects();
+};
+
+const navLinks = document.getElementById('nav-links');
+const soloLinks = navLinks.getElementsByTagName('p');
+
+const loadEffects = () => {
+  if (hoverNoEffect.checked === true) {
+    for (let i = 0; i < 5; i++) {
+      soloLinks[i].onmouseenter = () => {
+        soloLinks[i].style.transform = 'none';
+      };
+
+      soloLinks[i].onmouseleave = () => {
+        soloLinks[i].style.transform = 'none';
+      };
+    }
+  } else if (hoverScaleEffect.checked === true) {
+    for (let i = 0; i < 5; i++) {
+      soloLinks[i].onmouseenter = () => {
+        soloLinks[i].style.transform = 'scale(1.1)';
+      };
+
+      soloLinks[i].onmouseleave = () => {
+        soloLinks[i].style.transform = 'scale(1)';
+      };
+    }
+  } else if (hoverColorEffect.checked === true) {
+    for (let i = 0; i < 5; i++) {
+      soloLinks[i].onmouseenter = () => {
+        soloLinks[i].style.color = hoverLinkColorWell.value;
+      };
+
+      soloLinks[i].onmouseleave = () => {
+        soloLinks[i].style.color = navLinksText.style.color;
+      };
     }
   }
 };
