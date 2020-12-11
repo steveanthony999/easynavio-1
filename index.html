@@ -11,102 +11,134 @@
 <body>
     <div class="container">
         <header>Header</header>
-        <!-- ATTRIBUTES SECTION -->
-        <!-- ATTRIBUTES SECTION -->
-        <!-- ATTRIBUTES SECTION -->
-        <section id="attributes">
-            <br>
-            <h4>DESIGN YOUR NAVBAR</h4>
-            <br>
-            <hr>
-            <br>
-            <!-- Background color for landing page -->
-            <label>The color that mostly resembles the background of my landing page is</label>
-            <input type="color" value="#ffffff" id="colorWell">
-            <label for="colorWell" id="colorWellColor">#ffffff</label>
-            <br>
-            <br>
-            <hr>
-            <br>
-            <!-- Position of nav -->
-            <label for="nav-position">I'd like my nav to be</label>
-            <input type="radio" name="nav-position" id="fixed" value='fixed' checked>
-            <label for="fixed">Fixed</label>
-            <input type="radio" name="nav-position" id="unfixed" value='unfixed'>
-            <label for="unfixed">Not Fixed</label>
-            <br>
-            <br>
-            <hr>
-            <br>
-            <!-- Background color for nav -->
-            <label for="nav-colo">I'd like the background of my nav to be</label>
-            <input type="radio" name="nav-color" id="transparent" value='transparent'>
-            <label for="transparent">Transparent</label>
-            <input type="radio" name="nav-color" id="filled" value='filled' checked>
-            <label for="filled">Filled With Color</label>
-            <input type="color" value="#333333" id="nav-color-well">
-            <label for="nav-color-well" id="nav-color-well-color">#333333</label>
-            <br>
-            <br>
-            <hr>
-            <br>
-            <!-- Text color for nav -->
-            <label>I'd like the text color of my nav to be</label>
-            <input type="color" value="#ffffff" id="nav-text-color-well">
-            <label for="nav-text-color-well" id="nav-text-color-well-color">#ffffff</label>
-            <br>
-            <br>
-            <hr>
-            <br>
-            <!-- Container for the nav logo and links -->
-            <label for="nav-container">I'd like my nav logo and links to be</label>
-            <input type="radio" name="nav-container" id="wide" value='wide' checked>
-            <label for="wide">Wide</label>
-            <input type="radio" name="nav-container" id="contained" value='contained'>
-            <label for="contained">Contained</label>
-            <br>
-            <br>
-            <hr>
-            <br>
-            <!-- Height of the nav -->
-            <label for="nav-height">I'd like the height of my nav to be</label>
-            <input type="radio" name="nav-height" id="skinny" value='skinny'>
-            <label for="skinny">Skinny</label>
-            <input type="radio" name="nav-height" id="medium" value='medium' checked>
-            <label for="medium">Medium</label>
-            <input type="radio" name="nav-height" id="fat" value='fat'>
-            <label for="fat">Fat</label>
-            <input type="radio" name="nav-height" id="super-fat" value='super-fat'>
-            <label for="super-fat">Super Fat</label>
-            <br>
-            <br>
-            <hr>
-            <br>
-            <!-- Nav shrinks on scroll? -->
-            <label for="nav-scroll">I'd like my nav to shrink to the top on scroll</label>
-            <input type="checkbox" name="nav-scroll" id="shrink-me" value='yep' disabled>
-            <label for="shrink-me">Yep</label>
-            &nbsp;&nbsp;<span style='color: red'>*set nav to fixed and the height to fat or super fat to activate</span>
-            <br>
-            <br>
-            <hr>
-            <br>
-            <!-- Nav links on hover -->
-            <label for="nav-height">I'd like this hover effect on my links</label>
-            <input type="radio" name="hover-links" id="no-effect" value='no-effect' checked>
-            <label for="no-effect">No effect</label>
-            <input type="radio" name="hover-links" id="scale" value='scale'>
-            <label for="scale">Scale a li'l bit</label>
-            <input type="radio" name="hover-links" id="change-color" value='change-color'>
-            <label for="change-color">Change the color</label>
-            <input type="radio" name="hover-links" id="scale-and-change-color" value='scale-and-change-color'>
-            <label for="scale-and-change-color">Scale a li'l & change the color</label>
-            <input type="color" value="#aa77ff" id="hover-link-color-well">
-            <br>
-            <br>
-            <hr>
-            <br>
-        </section>
+        <div class="attributes-container">
+            <!-- ATTRIBUTES SECTION -->
+            <!-- ATTRIBUTES SECTION -->
+            <!-- ATTRIBUTES SECTION -->
+            <section id="attributes">
+                <br>
+                <h4>DESIGN MY NAVBAR</h4>
+                <br>
+                <hr>
+                <br>
+                <!-- Background color for landing page -->
+                <label>The color that mostly resembles the background of my landing page is</label>
+                <input type="color" value="#ffffff" id="colorWell">
+                <label for="colorWell" id="colorWellColor">#ffffff</label>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <!-- Position of nav -->
+                <label for="nav-position">I'd like my nav to be</label>
+                <input type="radio" name="nav-position" id="fixed" value='fixed' checked>
+                <label for="fixed">Fixed</label>
+                <input type="radio" name="nav-position" id="unfixed" value='unfixed'>
+                <label for="unfixed">Not Fixed</label>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <!-- Background color for nav -->
+                <label for="nav-colo">I'd like the background of my nav to be</label>
+                <input type="radio" name="nav-color" id="transparent" value='transparent'>
+                <label for="transparent">Transparent</label>
+                <input type="radio" name="nav-color" id="filled" value='filled' checked>
+                <label for="filled">Filled With Color</label>
+                <input type="color" value="#333333" id="nav-color-well">
+                <label for="nav-color-well" id="nav-color-well-color">#333333</label>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <!-- Text color for nav -->
+                <label>I'd like the text color of my nav to be</label>
+                <input type="color" value="#ffffff" id="nav-text-color-well">
+                <label for="nav-text-color-well" id="nav-text-color-well-color">#ffffff</label>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <!-- Container for the nav logo and links -->
+                <label for="nav-container">I'd like my nav logo and links to be</label>
+                <input type="radio" name="nav-container" id="wide" value='wide' checked>
+                <label for="wide">Wide</label>
+                <input type="radio" name="nav-container" id="contained" value='contained'>
+                <label for="contained">Contained</label>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <!-- Height of the nav -->
+                <label for="nav-height">I'd like the height of my nav to be</label>
+                <input type="radio" name="nav-height" id="skinny" value='skinny'>
+                <label for="skinny">Skinny</label>
+                <input type="radio" name="nav-height" id="medium" value='medium' checked>
+                <label for="medium">Medium</label>
+                <input type="radio" name="nav-height" id="fat" value='fat'>
+                <label for="fat">Fat</label>
+                <input type="radio" name="nav-height" id="super-fat" value='super-fat'>
+                <label for="super-fat">Super Fat</label>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <!-- Nav shrinks on scroll? -->
+                <label for="nav-scroll">I'd like my nav to shrink to the top on scroll</label>
+                <input type="checkbox" name="nav-scroll" id="shrink-me" value='yep' disabled>
+                <label for="shrink-me">Yep</label>
+                &nbsp;&nbsp;<span style='color: red'>*set nav to fixed and the height to fat or super fat to activate</span>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <!-- Nav links on hover -->
+                <label for="nav-height">I'd like this hover effect on my links</label>
+                <input type="radio" name="hover-links" id="no-effect" value='no-effect' checked>
+                <label for="no-effect">No effect</label>
+                <input type="radio" name="hover-links" id="scale" value='scale'>
+                <label for="scale">Scale a li'l bit</label>
+                <input type="radio" name="hover-links" id="change-color" value='change-color'>
+                <label for="change-color">Change the color</label>
+                <input type="radio" name="hover-links" id="scale-and-change-color" value='scale-and-change-color'>
+                <label for="scale-and-change-color">Scale a li'l & change the color</label>
+                <input type="color" value="#aa77ff" id="hover-link-color-well">
+                <br>
+                <br>
+                <hr>
+                <br>
+            </section>
+            <!-- VIEW SIZE SECTION -->
+            <!-- VIEW SIZE SECTION -->
+            <!-- VIEW SIZE SECTION -->
+            <section id="view-size">
+                <br>
+                <h4>DISPLAY WIDTH</h4>
+                <br>
+                <hr>
+                <br>
+                <!-- Device -->
+                <label for="device-display">I wanna see my navbar on</label><br>
+                <input type="radio" name="device-display" id="desktop" value='desktop' checked>
+                <label for="desktop">Desktop</label>
+                <input type="radio" name="device-display" id="tablet" value='tablet'>
+                <label for="tablet">Tablet</label>
+                <input type="radio" name="device-display" id="mobile" value='mobile'>
+                <label for="mobile">Mobile</label>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <!-- Nav links or manu button based on width -->
+                <label for="links-or-menu">I'd like a menu button if device is</label><br>
+                <input type="checkbox" name="links-or-menu" id="desktop-menu-button" value='desktop-menu-button'>
+                <label for="desktop">Desktop</label>
+                <input type="checkbox" name="links-or-menu" id="tablet-menu-button" value='tablet-menu-button' checked>
+                <label for="tablet">Tablet</label>
+                <input type="checkbox" name="links-or-menu" id="mobile-menu-button" value='mobile-menu-button' checked>
+                <label for="mobile">Mobile</label>
+            </section>
+        </div>
         <!-- NAV BUILDER -->
         <!-- NAV BUILDER -->
         <!-- NAV BUILDER -->
@@ -122,6 +154,19 @@
                         <p>Blog</p>
                         <p>Contact</p>
                         <p>Shop</p>
+                    </div>
+                    <div id="nav-links-mobile">
+                        <div id="nav-icon">
+                            <span class='nav-icon-span'></span>
+                            <span class='nav-icon-span'></span>
+                            <span class='nav-icon-span'></span>
+                            <span class='nav-icon-span'></span>
+                        </div>
+                        <!-- <p>Home</p>
+                        <p>About</p>
+                        <p>Blog</p>
+                        <p>Contact</p>
+                        <p>Shop</p> -->
                     </div>
                 </div>
             </div>
@@ -176,7 +221,7 @@
                     &nbsp;&nbsp;position: <span id='css-nav-position'>fixed</span>;<br>
                     &nbsp;&nbsp;padding: <span id='css-nav-padding-tb'>16px</span>&nbsp;
                     <span id='css-nav-padding-lr'>32px</span>;<br>
-                    &nbsp;&nbsp;transition: <span>0.4s</span>;<br>
+                    <span id='css-nav-transition'>&nbsp;&nbsp;transition: <span>0.4s</span>;<br></span>
                     &nbsp;&nbsp;color: <span id='css-nav-logo-text-color'>#ffffff</span>;<br>
                     }
                     <br>
@@ -192,8 +237,10 @@
                     <br>
                     #nav-links a {<br>
                     &nbsp;&nbsp;text-decoration: <span>none</span>;<br>
+                    &nbsp;&nbsp;display: <span>inline-block</span>;<br>
                     &nbsp;&nbsp;margin-left: <span>16px</span>;<br>
                     &nbsp;&nbsp;color: <span id='css-nav-text-color'>#ffffff</span>;<br>
+                    <span id='css-nav-text-transition'>&nbsp;&nbsp;transition: <span>0.4s</span>;<br></span>
                     }
                     <br>
                     <br>

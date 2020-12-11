@@ -40,14 +40,25 @@ const cssLinksOnHover = document.getElementById('links-on-hover');
 const cssScaleSpan = document.getElementById('scale-span');
 const cssColorSpan = document.getElementById('color-span');
 const cssColorSpanColor = document.getElementById('color-span-color');
+const cssNavTextTransition = document.getElementById('css-nav-text-transition');
+const cssNavTransition = document.getElementById('css-nav-transition');
+const deviceSizeDesktop = document.getElementById('desktop');
+const deviceSizeTablet = document.getElementById('tablet');
+const deviceSizeMobile = document.getElementById('mobile');
+const navIcon = document.getElementById('nav-icon');
+const navLinksMobile = document.getElementById('nav-links-mobile');
+const menuButtonDesktop = document.getElementById('desktop-menu-button');
+const menuButtonTablet = document.getElementById('tablet-menu-button');
+const menuButtonMobile = document.getElementById('mobile-menu-button');
+const navIconSpan = document.querySelectorAll('.nav-icon-span');
 
 // let colorWell;
 
 const defaultColor = '#ffffff';
 
-// Change Landing Page Color
-// Change Landing Page Color
-// Change Landing Page Color
+// CHANGE LANDING PAGE BACKGROUND COLOR
+// CHANGE LANDING PAGE BACKGROUND COLOR
+// CHANGE LANDING PAGE BACKGROUND COLOR
 
 // window.addEventListener('load', startup, false);
 
@@ -166,6 +177,9 @@ function updateFirstNavText(event) {
     for (let i = 0; i < 5; i++) {
       soloLinks[i].style.color = event.target.value;
     }
+    for (let i = 0; i < 4; i++) {
+      navIconSpan[i].style.backgroundColor = event.target.value;
+    }
   }
 }
 
@@ -238,11 +252,15 @@ navHeightSuperFat.onclick = () => {
 // SHRINK NAV
 // SHRINK NAV
 
+cssNavTransition.style.display = 'none';
+
 shrinkMeCheckbox.onclick = () => {
   if (shrinkMeCheckbox.checked === true) {
     jsNavOnScroll.style.display = 'block';
+    cssNavTransition.style.display = 'block';
   } else {
     jsNavOnScroll.style.display = 'none';
+    cssNavTransition.style.display = 'none';
   }
 };
 
@@ -265,13 +283,14 @@ navBuilderBg.onscroll = () => {
   }
 };
 
-// Link Hover Effects
-// Link Hover Effects
-// Link Hover Effects
+// LINK HOVER EFFECTS
+// LINK HOVER EFFECTS
+// LINK HOVER EFFECTS
 
 cssLinksOnHover.style.display = 'none';
 cssScaleSpan.style.display = 'none';
 cssColorSpan.style.display = 'none';
+cssNavTextTransition.style.display = 'none';
 hoverLinkColorWell.disabled = true;
 
 hoverNoEffect.onclick = () => {
@@ -279,6 +298,7 @@ hoverNoEffect.onclick = () => {
   cssLinksOnHover.style.display = 'none';
   cssScaleSpan.style.display = 'none';
   cssColorSpan.style.display = 'none';
+  cssNavTextTransition.style.display = 'none';
   hoverLinkColorWell.disabled = true;
 };
 
@@ -287,6 +307,7 @@ hoverScaleEffect.onclick = () => {
   cssLinksOnHover.style.display = 'block';
   cssScaleSpan.style.display = 'block';
   cssColorSpan.style.display = 'none';
+  cssNavTextTransition.style.display = 'block';
   hoverLinkColorWell.disabled = true;
 };
 
@@ -295,6 +316,7 @@ hoverColorEffect.onclick = () => {
   cssLinksOnHover.style.display = 'block';
   cssScaleSpan.style.display = 'none';
   cssColorSpan.style.display = 'block';
+  cssNavTextTransition.style.display = 'block';
   hoverLinkColorWell.disabled = false;
 };
 
@@ -303,6 +325,7 @@ hoverScaleAndColorEffect.onclick = () => {
   cssLinksOnHover.style.display = 'block';
   cssScaleSpan.style.display = 'block';
   cssColorSpan.style.display = 'block';
+  cssNavTextTransition.style.display = 'block';
   hoverLinkColorWell.disabled = false;
 };
 
@@ -351,3 +374,76 @@ function updateFirstNavHoverText(event) {
     cssColorSpanColor.textContent = event.target.value;
   }
 }
+
+// CHANGE DEVICE WIDTH
+// CHANGE DEVICE WIDTH
+// CHANGE DEVICE WIDTH
+
+let builderDisplaySize = 'desktop';
+
+deviceSizeDesktop.onclick = () => {
+  navBuilderBg.style.maxWidth = '80vw';
+  navbar.style.maxWidth = '80vw';
+  builderDisplaySize = 'desktop';
+  setMenuButton('desktop');
+};
+
+deviceSizeTablet.onclick = () => {
+  navBuilderBg.style.maxWidth = '568px';
+  navbar.style.maxWidth = '568px';
+  builderDisplaySize = 'tablet';
+  setMenuButton('tablet');
+};
+
+deviceSizeMobile.onclick = () => {
+  navBuilderBg.style.maxWidth = '400px';
+  navbar.style.maxWidth = '400px';
+  builderDisplaySize = 'mobile';
+  setMenuButton('mobile');
+};
+
+// MENU BUTTON OPTION
+// MENU BUTTON OPTION
+// MENU BUTTON OPTION
+
+menuButtonDesktop.onclick = () => {
+  setMenuButton('desktop');
+};
+
+menuButtonTablet.onclick = () => {
+  setMenuButton('tablet');
+};
+
+menuButtonMobile.onclick = () => {
+  setMenuButton('mobile');
+};
+
+function setMenuButton(displaySize) {
+  if (displaySize === 'desktop' && menuButtonDesktop.checked === true && builderDisplaySize === 'desktop') {
+    navLinks.style.display = 'none';
+    navLinksMobile.style.display = 'block';
+  } else if (displaySize === 'desktop' && menuButtonDesktop.checked === false && builderDisplaySize === 'desktop') {
+    navLinks.style.display = 'flex';
+    navLinksMobile.style.display = 'none';
+  } else if (displaySize === 'tablet' && menuButtonTablet.checked === true && builderDisplaySize === 'tablet') {
+    navLinks.style.display = 'none';
+    navLinksMobile.style.display = 'block';
+  } else if (displaySize === 'tablet' && menuButtonTablet.checked === false && builderDisplaySize === 'tablet') {
+    navLinks.style.display = 'flex';
+    navLinksMobile.style.display = 'none';
+  } else if (displaySize === 'mobile' && menuButtonMobile.checked === true && builderDisplaySize === 'mobile') {
+    navLinks.style.display = 'none';
+    navLinksMobile.style.display = 'block';
+  } else if (displaySize === 'mobile' && menuButtonMobile.checked === false && builderDisplaySize === 'mobile') {
+    navLinks.style.display = 'flex';
+    navLinksMobile.style.display = 'none';
+  }
+}
+
+// OPEN NAV MENU
+// OPEN NAV MENU
+// OPEN NAV MENU
+
+navIcon.addEventListener('click', () => {
+  navIcon.classList.toggle('open');
+});
