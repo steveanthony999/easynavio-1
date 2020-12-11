@@ -34,6 +34,12 @@ const hoverScaleEffect = document.getElementById('scale');
 const hoverColorEffect = document.getElementById('change-color');
 const hoverScaleAndColorEffect = document.getElementById('scale-and-change-color');
 const hoverLinkColorWell = document.getElementById('hover-link-color-well');
+const navLinks = document.getElementById('nav-links');
+const soloLinks = navLinks.getElementsByTagName('p');
+const cssLinksOnHover = document.getElementById('links-on-hover');
+const cssScaleSpan = document.getElementById('scale-span');
+const cssColorSpan = document.getElementById('color-span');
+const cssColorSpanColor = document.getElementById('color-span-color');
 
 // let colorWell;
 
@@ -157,6 +163,9 @@ function updateFirstNavText(event) {
     navLinksTextWellColor.textContent = event.target.value;
     cssNavLinksTextColor.textContent = event.target.value;
     cssNavLogoTextColor.textContent = event.target.value;
+    for (let i = 0; i < 5; i++) {
+      soloLinks[i].style.color = event.target.value;
+    }
   }
 }
 
@@ -260,55 +269,85 @@ navBuilderBg.onscroll = () => {
 // Link Hover Effects
 // Link Hover Effects
 
+cssLinksOnHover.style.display = 'none';
+cssScaleSpan.style.display = 'none';
+cssColorSpan.style.display = 'none';
+hoverLinkColorWell.disabled = true;
+
 hoverNoEffect.onclick = () => {
-  loadEffects();
+  loadEffects('none');
+  cssLinksOnHover.style.display = 'none';
+  cssScaleSpan.style.display = 'none';
+  cssColorSpan.style.display = 'none';
+  hoverLinkColorWell.disabled = true;
 };
 
 hoverScaleEffect.onclick = () => {
-  loadEffects();
+  loadEffects('scale');
+  cssLinksOnHover.style.display = 'block';
+  cssScaleSpan.style.display = 'block';
+  cssColorSpan.style.display = 'none';
+  hoverLinkColorWell.disabled = true;
 };
 
 hoverColorEffect.onclick = () => {
-  loadEffects();
+  loadEffects('color');
+  cssLinksOnHover.style.display = 'block';
+  cssScaleSpan.style.display = 'none';
+  cssColorSpan.style.display = 'block';
+  hoverLinkColorWell.disabled = false;
 };
 
 hoverScaleAndColorEffect.onclick = () => {
-  loadEffects();
+  loadEffects('scaleAndColor');
+  cssLinksOnHover.style.display = 'block';
+  cssScaleSpan.style.display = 'block';
+  cssColorSpan.style.display = 'block';
+  hoverLinkColorWell.disabled = false;
 };
 
-const navLinks = document.getElementById('nav-links');
-const soloLinks = navLinks.getElementsByTagName('p');
-
-const loadEffects = () => {
-  if (hoverNoEffect.checked === true) {
-    for (let i = 0; i < 5; i++) {
+const loadEffects = (effect) => {
+  for (let i = 0; i < 5; i++) {
+    if (effect === 'none') {
       soloLinks[i].onmouseenter = () => {
-        soloLinks[i].style.transform = 'none';
+        soloLinks[i].style.transform = 'scale(1)';
       };
-
-      soloLinks[i].onmouseleave = () => {
-        soloLinks[i].style.transform = 'none';
-      };
-    }
-  } else if (hoverScaleEffect.checked === true) {
-    for (let i = 0; i < 5; i++) {
+    } else if (effect === 'scale') {
       soloLinks[i].onmouseenter = () => {
-        soloLinks[i].style.transform = 'scale(1.1)';
+        soloLinks[i].style.transform = 'scale(1.2)';
       };
 
       soloLinks[i].onmouseleave = () => {
         soloLinks[i].style.transform = 'scale(1)';
       };
-    }
-  } else if (hoverColorEffect.checked === true) {
-    for (let i = 0; i < 5; i++) {
+    } else if (effect === 'color') {
       soloLinks[i].onmouseenter = () => {
+        soloLinks[i].style.transform = 'scale(1)';
         soloLinks[i].style.color = hoverLinkColorWell.value;
       };
 
       soloLinks[i].onmouseleave = () => {
         soloLinks[i].style.color = navLinksText.style.color;
       };
+    } else if ('scaleAndColor') {
+      soloLinks[i].onmouseenter = () => {
+        soloLinks[i].style.transform = 'scale(1.2)';
+        soloLinks[i].style.color = hoverLinkColorWell.value;
+      };
+
+      soloLinks[i].onmouseleave = () => {
+        soloLinks[i].style.transform = 'scale(1)';
+        soloLinks[i].style.color = navLinksText.style.color;
+      };
     }
   }
 };
+
+hoverLinkColorWell.addEventListener('input', updateFirstNavHoverText, false);
+hoverLinkColorWell.select();
+
+function updateFirstNavHoverText(event) {
+  if (navbar) {
+    cssColorSpanColor.textContent = event.target.value;
+  }
+}
