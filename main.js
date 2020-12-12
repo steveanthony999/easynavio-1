@@ -34,6 +34,7 @@ const hoverScaleEffect = document.getElementById('scale');
 const hoverColorEffect = document.getElementById('change-color');
 const hoverScaleAndColorEffect = document.getElementById('scale-and-change-color');
 const hoverLinkColorWell = document.getElementById('hover-link-color-well');
+const hoverLinkTextColorWell = document.getElementById('hover-link-text-color-well');
 const navLinks = document.getElementById('nav-links');
 const soloLinks = navLinks.getElementsByTagName('p');
 const cssLinksOnHover = document.getElementById('links-on-hover');
@@ -390,6 +391,7 @@ hoverLinkColorWell.select();
 function updateFirstNavHoverText(event) {
   if (navbar) {
     cssColorSpanColor.textContent = event.target.value;
+    hoverLinkTextColorWell.textContent = event.target.value;
   }
 }
 
@@ -464,6 +466,14 @@ function setMenuButton(displaySize) {
     cssNavLinksMobile.style.display = 'none';
     jsNavMenu.style.display = 'none';
     cssMediaQuery.style.display = 'none';
+  } else if (
+    menuButtonDesktop.checked === true &&
+    menuButtonTablet.checked === false &&
+    menuButtonMobile.checked === false
+  ) {
+    cssNavLinksMobile.style.display = 'none';
+    jsNavMenu.style.display = 'none';
+    cssMediaQuery.style.display = 'none';
   } else {
     jsNavMenu.style.display = 'block';
     cssMediaQuery.style.display = 'block';
@@ -472,12 +482,15 @@ function setMenuButton(displaySize) {
   if (menuButtonTablet.checked === true && menuButtonMobile.checked === false) {
     cssMediaQueryTablet.style.display = 'block';
     cssMediaQueryMobile.style.display = 'none';
+    cssNavLinksMobile.style.display = 'block';
   } else if (menuButtonTablet.checked === false && menuButtonMobile.checked === true) {
     cssMediaQueryTablet.style.display = 'none';
     cssMediaQueryMobile.style.display = 'block';
-  } else {
+    cssNavLinksMobile.style.display = 'block';
+  } else if (menuButtonTablet.checked === true && menuButtonMobile.checked === true) {
     cssMediaQueryTablet.style.display = 'block';
     cssMediaQueryMobile.style.display = 'block';
+    cssNavLinksMobile.style.display = 'block';
   }
 }
 
