@@ -243,7 +243,7 @@
                     &nbsp;&nbsp;display: <span>flex</span>;<br>
                     &nbsp;&nbsp;align-items: <span>center</span>;<br>
                     &nbsp;&nbsp;justify-content: <span>space-between</span>;<br>
-                    <span id='css-nav-container-width-text'>&nbsp;&nbsp;width:&nbsp;1100px;&nbsp;<br></span>
+                    <span id='css-nav-container-width-text'>&nbsp;&nbsp;max-width:&nbsp;1100px;&nbsp;<br></span>
                     <span id='css-nav-container-margin-text'>&nbsp;&nbsp;margin:&nbsp;0&nbsp;auto;&nbsp;<br></span>
                     }
                     <br>
@@ -348,6 +348,42 @@
                             &nbsp;&nbsp;top: 18px;<br>
                             &nbsp;&nbsp;width: 0%;<br>
                             &nbsp;&nbsp;left: 50%;<br>
+                            }<br>
+                            <br>
+                        </div>
+                    </div>
+                    <div id="css-media-query">
+                        <div id="css-media-query-mobile">
+                            /* media query mobile */<br>
+                            @media screen and (max-width: 480px) {<br>
+                            &nbsp;&nbsp;#nav-links {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;display: none;<br>
+                            &nbsp;&nbsp;}<br>
+                            <br>
+                            &nbsp;&nbsp;#nav-links-mobile {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;display: block;<br>
+                            &nbsp;&nbsp;}<br>
+                            <br>
+                            &nbsp;&nbsp;#nav-container {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+                            &nbsp;&nbsp;}<br>
+                            }<br>
+                            <br>
+                        </div>
+                        <div id="css-media-query-tablet">
+                            /* media query tablet */<br>
+                            @media screen and (min-width: 481px) and (max-width: 768px) {<br>
+                            &nbsp;&nbsp;#nav-links {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;display: none;<br>
+                            &nbsp;&nbsp;}<br>
+                            <br>
+                            &nbsp;&nbsp;#nav-links-mobile {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;display: block;<br>
+                            &nbsp;&nbsp;}<br>
+                            <br>
+                            &nbsp;&nbsp;#nav-container {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+                            &nbsp;&nbsp;}<br>
                             }<br>
                             <br>
                         </div>
