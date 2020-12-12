@@ -51,6 +51,9 @@ const menuButtonDesktop = document.getElementById('desktop-menu-button');
 const menuButtonTablet = document.getElementById('tablet-menu-button');
 const menuButtonMobile = document.getElementById('mobile-menu-button');
 const navIconSpan = document.querySelectorAll('.nav-icon-span');
+const cssNavLinksMobile = document.getElementById('css-nav-links-mobile');
+const jsNavMenu = document.getElementById('js-nav-menu');
+const cssNavMenuMobileColor = document.getElementById('css-nav-menu-mobile-color');
 
 // let colorWell;
 
@@ -174,6 +177,7 @@ function updateFirstNavText(event) {
     navLinksTextWellColor.textContent = event.target.value;
     cssNavLinksTextColor.textContent = event.target.value;
     cssNavLogoTextColor.textContent = event.target.value;
+    cssNavMenuMobileColor.textContent = event.target.value;
     for (let i = 0; i < 5; i++) {
       soloLinks[i].style.color = event.target.value;
     }
@@ -437,6 +441,13 @@ function setMenuButton(displaySize) {
   } else if (displaySize === 'mobile' && menuButtonMobile.checked === false && builderDisplaySize === 'mobile') {
     navLinks.style.display = 'flex';
     navLinksMobile.style.display = 'none';
+  }
+
+  if (menuButtonDesktop.checked === false && menuButtonTablet.checked === false && menuButtonMobile.checked === false) {
+    cssNavLinksMobile.style.display = 'none';
+    jsNavMenu.style.display = 'none';
+  } else {
+    jsNavMenu.style.display = 'block';
   }
 }
 

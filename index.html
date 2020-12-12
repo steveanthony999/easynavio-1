@@ -204,6 +204,19 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- AS MANY AS --&gt;&lt;/a&gt;<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- YOU'D LIKE --&gt;&lt;/a&gt;<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="nav-links-mobile"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="nav-icon"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- YOUR LINKS --&gt;&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- WILL GO HERE --&gt;&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- ADD OR REMOVE --&gt;&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- AS MANY AS --&gt;&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- YOU'D LIKE --&gt;&lt;/a&gt;<br> -->
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
                     &nbsp;&nbsp;&lt;/div&gt;<br>
                     &lt;/nav&gt;
                 </code>
@@ -249,6 +262,95 @@
                         <span id='scale-span'>&nbsp;&nbsp;transform: <span>scale(1.2)</span>;<br></span>
                         <span id='color-span'>&nbsp;&nbsp;color: <span id="color-span-color">#aa77ff</span>;<br></span>
                         }
+                        <br>
+                        <br>
+                    </div>
+                    <div id="css-nav-links-mobile">
+                        #nav-links-mobile {<br>
+                        &nbsp;&nbsp;display: none;<br>
+                        }<br>
+
+                        <br>
+                        <div>
+                            #nav-icon {<br>
+                            &nbsp;&nbsp;width: 30px;<br>
+                            &nbsp;&nbsp;height: 20px;<br>
+                            &nbsp;&nbsp;position: relative;<br>
+                            &nbsp;&nbsp;-webkit-transform: rotate(0deg);<br>
+                            &nbsp;&nbsp;-moz-transform: rotate(0deg);<br>
+                            &nbsp;&nbsp;-o-transform: rotate(0deg);<br>
+                            &nbsp;&nbsp;transform: rotate(0deg);<br>
+                            &nbsp;&nbsp;-webkit-transition: 0.5s ease-in-out;<br>
+                            &nbsp;&nbsp;-moz-transition: 0.5s ease-in-out;<br>
+                            &nbsp;&nbsp;-o-transition: 0.5s ease-in-out;<br>
+                            &nbsp;&nbsp;transition: 0.5s ease-in-out;<br>
+                            &nbsp;&nbsp;cursor: pointer;<br>
+                            }
+                            <br>
+                            <br>
+                        </div>
+                        <div>
+                            #nav-icon span {<br>
+                            &nbsp;&nbsp;display: block;<br>
+                            &nbsp;&nbsp;position: absolute;<br>
+                            &nbsp;&nbsp;height: 2px;<br>
+                            &nbsp;&nbsp;width: 100%;<br>
+                            &nbsp;&nbsp;background: <span id="css-nav-menu-mobile-color">#ffffff</span>;<br>
+                            &nbsp;&nbsp;opacity: 1;<br>
+                            &nbsp;&nbsp;left: 0;<br>
+                            &nbsp;&nbsp;-webkit-transform: rotate(0deg);<br>
+                            &nbsp;&nbsp;-moz-transform: rotate(0deg);<br>
+                            &nbsp;&nbsp;-o-transform: rotate(0deg);<br>
+                            &nbsp;&nbsp;transform: rotate(0deg);<br>
+                            &nbsp;&nbsp;-webkit-transition: 0.25s ease-in-out;<br>
+                            &nbsp;&nbsp;-moz-transition: 0.25s ease-in-out;<br>
+                            &nbsp;&nbsp;-o-transition: 0.25s ease-in-out;<br>
+                            &nbsp;&nbsp;transition: 0.25s ease-in-out;<br>
+                            }
+                            <br>
+                            <br>
+                        </div>
+                        <div>
+                            #nav-icon span:nth-child(1) {<br>
+                            &nbsp;&nbsp;top: 0px;<br>
+                            }<br>
+                            <br>
+                            #nav-icon span:nth-child(2),<br>
+                            #nav-icon span:nth-child(3) {<br>
+                            &nbsp;&nbsp;top: 9px;<br>
+                            }<br>
+                            <br>
+                            #nav-icon span:nth-child(4) {<br>
+                            &nbsp;&nbsp;top: 18px;<br>
+                            }<br>
+                            <br>
+                            #nav-icon.open span:nth-child(1) {<br>
+                            &nbsp;&nbsp;top: 18px;<br>
+                            &nbsp;&nbsp;width: 0%;<br>
+                            &nbsp;&nbsp;left: 50%;<br>
+                            }<br>
+                            <br>
+                            #nav-icon.open span:nth-child(2) {<br>
+                            &nbsp;&nbsp;-webkit-transform: rotate(45deg);<br>
+                            &nbsp;&nbsp;-moz-transform: rotate(45deg);<br>
+                            &nbsp;&nbsp;-o-transform: rotate(45deg);<br>
+                            &nbsp;&nbsp;transform: rotate(45deg);<br>
+                            }<br>
+                            <br>
+                            #nav-icon.open span:nth-child(3) {<br>
+                            &nbsp;&nbsp;-webkit-transform: rotate(-45deg);<br>
+                            &nbsp;&nbsp;-moz-transform: rotate(-45deg);<br>
+                            &nbsp;&nbsp;-o-transform: rotate(-45deg);<br>
+                            &nbsp;&nbsp;transform: rotate(-45deg);<br>
+                            }<br>
+                            <br>
+                            #nav-icon.open span:nth-child(4) {<br>
+                            &nbsp;&nbsp;top: 18px;<br>
+                            &nbsp;&nbsp;width: 0%;<br>
+                            &nbsp;&nbsp;left: 50%;<br>
+                            }<br>
+                            <br>
+                        </div>
                     </div>
                 </code>
             </div>
@@ -279,6 +381,18 @@
                         &nbsp;&nbsp;}
                         <br>
                         }
+                        <br>
+                        <br>
+                    </div>
+                    <div id="js-nav-menu">
+                        const navIcon = document.getElementById('nav-icon');
+                        <br>
+                        <br>
+                        navIcon.addEventListener('click', () => {
+                        <br>
+                        &nbsp;&nbsp;navIcon.classList.toggle('open');
+                        <br>
+                        });
                     </div>
                 </code>
             </div>
