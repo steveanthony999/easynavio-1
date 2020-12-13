@@ -40,7 +40,7 @@
                 <hr>
                 <br>
                 <!-- Background color for nav -->
-                <label for="nav-colo">I'd like the background of my nav to be</label>
+                <label for="nav-color">I'd like the background of my nav to be</label>
                 <input type="radio" name="nav-color" id="transparent" value='transparent'>
                 <label for="transparent">Transparent</label>
                 <input type="radio" name="nav-color" id="filled" value='filled' checked>
@@ -104,6 +104,24 @@
                 <label for="scale-and-change-color">Scale a li'l & change the color</label>
                 <input type="color" value="#aa77ff" id="hover-link-color-well">
                 <label for="hover-link-color-well" id="hover-link-text-color-well">#aa77ff</label>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <!-- Header for mobile menu design -->
+                <br>
+                <h4>DESIGN MY MOBILE MENU</h4>
+                <br>
+                <hr>
+                <br>
+                <!-- Background color for mobile menu -->
+                <label for="mobile-menu-color-bg">I'd like the background of my mobile menu to be</label>
+                <input type="radio" name="mobile-menu-color-bg" id="same-bg-color-as-navbar" value='sameasnavbar' checked>
+                <label for="same-bg-color-as-navbar">The same as my navbar</label>
+                <input type="radio" name="mobile-menu-color-bg" id="different-bg-color-as-navbar" value='differentfromnavbar'>
+                <label for="different-bg-color-as-navbar">A different color than my navbar</label>
+                <input type="color" value="#333333" id="mobile-menu-color-bg-well" disabled>
+                <label for="mobile-menu-color-bg-well" id="mobile-menu-color-bg-well-color">#333333</label>
                 <br>
                 <br>
                 <hr>
@@ -375,7 +393,7 @@
                         #nav-mobile-menu {<br>
                         &nbsp;&nbsp;width: 100%;<br>
                         &nbsp;&nbsp;height: 500px;<br>
-                        &nbsp;&nbsp;background: #333333;<br>
+                        &nbsp;&nbsp;background: <span id='css-nav-mobile-menu-bg-color'>#333333</span>;<br>
                         &nbsp;&nbsp;position: absolute;<br>
                         &nbsp;&nbsp;top: 0;<br>
                         &nbsp;&nbsp;right: 0;<br>

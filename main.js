@@ -61,9 +61,15 @@ const cssMediaQueryMobile = document.getElementById('css-media-query-mobile');
 const cssNavLinks = document.getElementById('css-nav-links');
 const cssNavLinksMobileDisplayText = document.getElementById('css-nav-links-mobile-display-text');
 const htmlNavLinksMobileText = document.getElementById('html-nav-links-mobile-text');
+const navMobileMenu = document.getElementById('nav-mobile-menu');
 const htmlNavMobileMenu = document.getElementById('html-nav-mobile-menu');
 const cssNavMobileMenu = document.getElementById('css-nav-menu-mobile');
 const jsNavMobileMenu = document.getElementById('js-nav-menu-mobile');
+const mobileMenuBgSameAsNav = document.getElementById('same-bg-color-as-navbar');
+const mobileMenuBgDifferentAsNav = document.getElementById('different-bg-color-as-navbar');
+const mobileMenuColorBgWell = document.getElementById('mobile-menu-color-bg-well');
+const mobileMenuColorBgWellColor = document.getElementById('mobile-menu-color-bg-well-color');
+const cssNavMobileMenuBgColor = document.getElementById('css-nav-mobile-menu-bg-color');
 
 const defaultColor = '#ffffff';
 
@@ -149,10 +155,10 @@ filledNav.onclick = () => {
   cssNavBgColor.textContent = storedNavColor;
 };
 
-function navColorValue(hex) {
-  storedNavColor = hex;
-  return storedNavColor;
-}
+// function navColorValue(hex) {
+//   storedNavColor = hex;
+//   return storedNavColor;
+// }
 
 navColorWell.value = storedNavColor;
 navColorWell.addEventListener('input', updateFirstNav, false);
@@ -163,6 +169,12 @@ function updateFirstNav(event) {
     navbar.style.backgroundColor = event.target.value;
     navColorWellColor.textContent = event.target.value;
     cssNavBgColor.textContent = event.target.value;
+    if (mobileMenuBgSameAsNav.checked === true) {
+      navMobileMenu.style.background = storedNavColor;
+      cssNavMobileMenuBgColor.textContent = event.target.value;
+      mobileMenuColorBgWell.value = event.target.value;
+      mobileMenuColorBgWellColor.textContent = event.target.value;
+    }
     storedNavColor = event.target.value;
   }
 }
@@ -488,10 +500,16 @@ function setMenuButton(displaySize) {
     navLinks.style.display = 'flex';
     navLinksMobile.style.display = 'none';
     htmlNavLinksMobileText.style.display = 'none';
+    htmlNavMobileMenu.style.display = 'none';
+    cssNavMobileMenu.style.display = 'none';
+    jsNavMobileMenu.style.display = 'none';
   } else {
     jsNavMenu.style.display = 'block';
     cssMediaQuery.style.display = 'block';
     htmlNavLinksMobileText.style.display = 'block';
+    htmlNavMobileMenu.style.display = 'block';
+    cssNavMobileMenu.style.display = 'block';
+    jsNavMobileMenu.style.display = 'block';
     htmlNavMobileMenu.style.display = 'block';
     cssNavMobileMenu.style.display = 'block';
     jsNavMobileMenu.style.display = 'block';
@@ -532,8 +550,6 @@ navIcon.onclick = () => {
   openCloseNav(navIcon.classList.value);
 };
 
-const navMobileMenu = document.getElementById('nav-mobile-menu');
-
 function openCloseNav(navOpen) {
   if (navOpen === 'open') {
     navMobileMenu.style.transform = 'scaleX(1)';
@@ -541,5 +557,37 @@ function openCloseNav(navOpen) {
   } else {
     navMobileMenu.style.transform = 'scaleX(0)';
     navBuilderBg.style.overflowY = 'scroll';
+  }
+}
+
+// CHANGE MOBILE MENU BACKGROUND COLOR
+// CHANGE MOBILE MENU BACKGROUND COLOR
+// CHANGE MOBILE MENU BACKGROUND COLOR
+
+mobileMenuBgSameAsNav.onclick = () => {
+  mobileMenuColorBgWell.disabled = true;
+  navMobileMenu.style.background = storedNavColor;
+  cssNavMobileMenuBgColor.textContent = storedNavColor;
+  mobileMenuColorBgWell.value = storedNavColor;
+  mobileMenuColorBgWellColor.textContent = storedNavColor;
+};
+
+mobileMenuBgDifferentAsNav.onclick = () => {
+  mobileMenuColorBgWell.disabled = false;
+  console.log(mobileMenuBgDifferentAsNav.checked);
+  changeMobileMenuBg();
+};
+
+function changeMobileMenuBg() {
+  if (mobileMenuBgDifferentAsNav.checked === true) {
+    mobileMenuColorBgWell.addEventListener('input', updateFirstNavMobileMenuBgColor, false);
+    mobileMenuColorBgWell.select();
+
+    function updateFirstNavMobileMenuBgColor(event) {
+      navMobileMenu.style.background = event.target.value;
+      cssNavMobileMenuBgColor.textContent = event.target.value;
+      mobileMenuColorBgWell.value = event.target.value;
+      mobileMenuColorBgWellColor.textContent = event.target.value;
+    }
   }
 }
