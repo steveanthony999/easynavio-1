@@ -640,3 +640,15 @@ function changeMobileMenuTextColor() {
     }
   }
 }
+
+// COPY CODE TEXT
+// COPY CODE TEXT
+// COPY CODE TEXT
+
+const codeHtml = document.getElementById('code-html');
+
+function copyHtml() {
+  codeHtml.select();
+  codeHtml.setSelectionRange(0, 99999);
+  document.execCommand('copy');
+}
