@@ -163,11 +163,16 @@
                             <span class='nav-icon-span'></span>
                             <span class='nav-icon-span'></span>
                         </div>
-                        <!-- <p>Home</p>
-                        <p>About</p>
-                        <p>Blog</p>
-                        <p>Contact</p>
-                        <p>Shop</p> -->
+
+                    </div>
+                </div>
+                <div id="nav-mobile-menu">
+                    <div id="nav-mobile-links">
+                        <p>Link 1</p>
+                        <p>Link 2</p>
+                        <p>Link 3</p>
+                        <p>Link 4</p>
+                        <p>Link 5</p>
                     </div>
                 </div>
             </div>
@@ -176,11 +181,13 @@
             <div id="section-1">
                 <img src="./assets/img-cute-black.png" id="headerImg" alt="cute-image">
                 <h2 id='headerColor'>Ah Landing Page</h2>
+
             </div>
             <div id="section-2">
                 <img src="./assets/img-cute-black.png" alt="cute-image">
                 <h2>Ah Section</h2>
             </div>
+
         </section>
         <!-- CODE SECTION -->
         <!-- CODE SECTION -->
@@ -205,20 +212,26 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- AS MANY AS --&gt;&lt;/a&gt;<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- YOU'D LIKE --&gt;&lt;/a&gt;<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="nav-links-mobile"&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="nav-icon"&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
-                    <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- YOUR LINKS --&gt;&lt;/a&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- WILL GO HERE --&gt;&lt;/a&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- ADD OR REMOVE --&gt;&lt;/a&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- AS MANY AS --&gt;&lt;/a&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;&lt;!-- YOU'D LIKE --&gt;&lt;/a&gt;<br> -->
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    <div id='html-nav-links-mobile-text'>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="nav-links-mobile"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="nav-icon"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class='nav-icon-span'&gt;&lt;/span&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br></div>
                     &nbsp;&nbsp;&lt;/div&gt;<br>
+                    <div id="html-nav-mobile-menu">
+                        &nbsp;&nbsp;&lt;div id="nav-mobile-menu"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="nav-mobile-links"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;!-- THE SAME LINKS --&lt;/a&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;!-- FROM ABOVE --&lt;/a&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;!-- WILL GO HERE --&lt;/a&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;!-- AS WELL --&lt;/a&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"&gt;!-- YOUR LINKS --&lt;/a&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                        &nbsp;&nbsp;&lt;/div&gt;<br>
+                    </div>
                     &lt;/nav&gt;
                 </code>
             </div>
@@ -290,6 +303,7 @@
                             &nbsp;&nbsp;-o-transition: 0.5s ease-in-out;<br>
                             &nbsp;&nbsp;transition: 0.5s ease-in-out;<br>
                             &nbsp;&nbsp;cursor: pointer;<br>
+                            &nbsp;&nbsp;z-index: 10;<br>
                             }
                             <br>
                             <br>
@@ -356,6 +370,37 @@
                             }<br>
                             <br>
                         </div>
+                    </div>
+                    <div id="css-nav-menu-mobile">
+                        #nav-mobile-menu {<br>
+                        &nbsp;&nbsp;width: 100%;<br>
+                        &nbsp;&nbsp;height: 500px;<br>
+                        &nbsp;&nbsp;background: #333333;<br>
+                        &nbsp;&nbsp;position: absolute;<br>
+                        &nbsp;&nbsp;top: 0;<br>
+                        &nbsp;&nbsp;right: 0;<br>
+                        &nbsp;&nbsp;display: flex;<br>
+                        &nbsp;&nbsp;align-items: center;<br>
+                        &nbsp;&nbsp;justify-content: center;<br>
+                        &nbsp;&nbsp;transform-origin: right;<br>
+                        &nbsp;&nbsp;transform: scaleX(0);<br>
+                        &nbsp;&nbsp;transition: 0.4s;<br>
+                        }<br>
+                        <br>
+                        #nav-mobile-links {<br>
+                        &nbsp;&nbsp;width: 100%;<br>
+                        &nbsp;&nbsp;height: 40%;<br>
+                        &nbsp;&nbsp;display: flex;<br>
+                        &nbsp;&nbsp;flex-direction: column;<br>
+                        &nbsp;&nbsp;justify-content: space-evenly;<br>
+                        &nbsp;&nbsp;align-items: center;<br>
+                        }<br>
+                        <br>
+                        #nav-mobile-links a {<br>
+                        &nbsp;&nbsp;text-decoration: none;<br>
+                        &nbsp;&nbsp;color: white;<br>
+                        }<br>
+                        <br>
                     </div>
                     <div id="css-media-query">
                         <div id="css-media-query-mobile">
@@ -434,6 +479,28 @@
                         &nbsp;&nbsp;navIcon.classList.toggle('open');
                         <br>
                         });
+                        <br>
+                        <br>
+                    </div>
+                    <div id="js-nav-menu-mobile">
+                        const navMobileMenu = document.getElementById('nav-mobile-menu');<br>
+                        const body = document.querySelector('body');<br>
+                        <br>
+                        navIcon.onclick = () => {<br>
+                        &nbsp;&nbsp;openCloseNav(navIcon.classList.value);<br>
+                        };<br>
+                        <br>
+                        function openCloseNav(navOpen) {<br>
+                        &nbsp;&nbsp;if (navOpen === 'open') {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;navMobileMenu.style.transform = 'scaleX(1)';<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;body.style.overflow = 'hidden';<br>
+                        &nbsp;&nbsp;} else {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;navMobileMenu.style.transform = 'scaleX(0)';<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;body.style.overflow = 'scroll';<br>
+                        &nbsp;&nbsp;}<br>
+                        }<br>
+                        <br>
+                        <br>
                     </div>
                 </code>
             </div>

@@ -60,6 +60,10 @@ const cssMediaQueryTablet = document.getElementById('css-media-query-tablet');
 const cssMediaQueryMobile = document.getElementById('css-media-query-mobile');
 const cssNavLinks = document.getElementById('css-nav-links');
 const cssNavLinksMobileDisplayText = document.getElementById('css-nav-links-mobile-display-text');
+const htmlNavLinksMobileText = document.getElementById('html-nav-links-mobile-text');
+const htmlNavMobileMenu = document.getElementById('html-nav-mobile-menu');
+const cssNavMobileMenu = document.getElementById('css-nav-menu-mobile');
+const jsNavMobileMenu = document.getElementById('js-nav-menu-mobile');
 
 const defaultColor = '#ffffff';
 
@@ -468,6 +472,10 @@ function setMenuButton(displaySize) {
     cssNavLinksMobile.style.display = 'none';
     jsNavMenu.style.display = 'none';
     cssMediaQuery.style.display = 'none';
+    htmlNavLinksMobileText.style.display = 'none';
+    htmlNavMobileMenu.style.display = 'none';
+    cssNavMobileMenu.style.display = 'none';
+    jsNavMobileMenu.style.display = 'none';
   } else if (
     menuButtonDesktop.checked === true &&
     menuButtonTablet.checked === false &&
@@ -479,9 +487,14 @@ function setMenuButton(displaySize) {
     menuButtonDesktop.checked = false;
     navLinks.style.display = 'flex';
     navLinksMobile.style.display = 'none';
+    htmlNavLinksMobileText.style.display = 'none';
   } else {
     jsNavMenu.style.display = 'block';
     cssMediaQuery.style.display = 'block';
+    htmlNavLinksMobileText.style.display = 'block';
+    htmlNavMobileMenu.style.display = 'block';
+    cssNavMobileMenu.style.display = 'block';
+    jsNavMobileMenu.style.display = 'block';
   }
 
   if (menuButtonTablet.checked === true && menuButtonMobile.checked === false) {
@@ -514,3 +527,19 @@ function setMenuButton(displaySize) {
 navIcon.addEventListener('click', () => {
   navIcon.classList.toggle('open');
 });
+
+navIcon.onclick = () => {
+  openCloseNav(navIcon.classList.value);
+};
+
+const navMobileMenu = document.getElementById('nav-mobile-menu');
+
+function openCloseNav(navOpen) {
+  if (navOpen === 'open') {
+    navMobileMenu.style.transform = 'scaleX(1)';
+    navBuilderBg.style.overflow = 'hidden';
+  } else {
+    navMobileMenu.style.transform = 'scaleX(0)';
+    navBuilderBg.style.overflowY = 'scroll';
+  }
+}
