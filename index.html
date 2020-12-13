@@ -109,19 +109,30 @@
                 <hr>
                 <br>
                 <!-- Header for mobile menu design -->
-                <br>
-                <h4>DESIGN MY MOBILE MENU</h4>
+                <h4>DESIGN MY DRAWER</h4>
                 <br>
                 <hr>
                 <br>
                 <!-- Background color for mobile menu -->
-                <label for="mobile-menu-color-bg">I'd like the background of my mobile menu to be</label>
+                <label for="mobile-menu-color-bg">I'd like the background of my drawer to be</label>
                 <input type="radio" name="mobile-menu-color-bg" id="same-bg-color-as-navbar" value='sameasnavbar' checked>
                 <label for="same-bg-color-as-navbar">The same as my navbar</label>
                 <input type="radio" name="mobile-menu-color-bg" id="different-bg-color-as-navbar" value='differentfromnavbar'>
                 <label for="different-bg-color-as-navbar">A different color than my navbar</label>
                 <input type="color" value="#333333" id="mobile-menu-color-bg-well" disabled>
                 <label for="mobile-menu-color-bg-well" id="mobile-menu-color-bg-well-color">#333333</label>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <!-- Text color for mobile menu -->
+                <label for="mobile-menu-color-text">I'd like the text color of my drawer to be</label>
+                <input type="radio" name="mobile-menu-color-text" id="same-text-color-as-navbar" value='sameasnavbar' checked>
+                <label for="same-text-color-as-navbar">The same as my navbar</label>
+                <input type="radio" name="mobile-menu-color-text" id="different-text-color-as-navbar" value='differentfromnavbar'>
+                <label for="different-text-color-as-navbar">A different color than my navbar</label>
+                <input type="color" value="#ffffff" id="mobile-menu-color-text-well" disabled>
+                <label for="mobile-menu-color-text-well" id="mobile-menu-color-text-well-color">#ffffff</label>
                 <br>
                 <br>
                 <hr>
@@ -416,7 +427,7 @@
                         <br>
                         #nav-mobile-links a {<br>
                         &nbsp;&nbsp;text-decoration: none;<br>
-                        &nbsp;&nbsp;color: white;<br>
+                        &nbsp;&nbsp;color: <span id='css-nav-mobile-menu-text-color'>#ffffff</span>;<br>
                         }<br>
                         <br>
                     </div>

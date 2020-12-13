@@ -242,8 +242,9 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-}
-
-#nav-mobile-links p {
   color: #ffffff;
 }
+
+/* #nav-mobile-links p {
+  color: #ffffff;
+} */

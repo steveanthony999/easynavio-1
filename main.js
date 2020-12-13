@@ -70,6 +70,12 @@ const mobileMenuBgDifferentAsNav = document.getElementById('different-bg-color-a
 const mobileMenuColorBgWell = document.getElementById('mobile-menu-color-bg-well');
 const mobileMenuColorBgWellColor = document.getElementById('mobile-menu-color-bg-well-color');
 const cssNavMobileMenuBgColor = document.getElementById('css-nav-mobile-menu-bg-color');
+const navMobileLinks = document.getElementById('nav-mobile-links');
+const mobileMenuTextSameAsNav = document.getElementById('same-text-color-as-navbar');
+const mobileMenuTextDifferentAsNav = document.getElementById('different-text-color-as-navbar');
+const mobileMenuColorTextWell = document.getElementById('mobile-menu-color-text-well');
+const mobileMenuColorTextWellColor = document.getElementById('mobile-menu-color-text-well-color');
+const cssNavMobileMenuTextColor = document.getElementById('css-nav-mobile-menu-text-color');
 
 const defaultColor = '#ffffff';
 
@@ -145,6 +151,9 @@ transparentNav.onclick = () => {
   navColorWellColor.style.opacity = '0.3';
   navbar.style.backgroundColor = 'transparent';
   cssNavBgColor.textContent = 'transparent';
+  mobileMenuBgDifferentAsNav.checked = true;
+  mobileMenuColorBgWell.disabled = false;
+  changeMobileMenuBg();
 };
 
 filledNav.onclick = () => {
@@ -199,6 +208,15 @@ function updateFirstNavText(event) {
     }
     for (let i = 0; i < 4; i++) {
       navIconSpan[i].style.backgroundColor = event.target.value;
+    }
+    if (mobileMenuTextSameAsNav.checked === true) {
+      //
+      //
+      //
+      navMobileLinks.style.color = event.target.value;
+      cssNavMobileMenuTextColor.textContent = event.target.value;
+      mobileMenuColorTextWell.value = event.target.value;
+      mobileMenuColorTextWellColor.textContent = event.target.value;
     }
   }
 }
@@ -588,6 +606,37 @@ function changeMobileMenuBg() {
       cssNavMobileMenuBgColor.textContent = event.target.value;
       mobileMenuColorBgWell.value = event.target.value;
       mobileMenuColorBgWellColor.textContent = event.target.value;
+    }
+  }
+}
+
+// CHANGE MOBILE MENU TEXT COLOR
+// CHANGE MOBILE MENU TEXT COLOR
+// CHANGE MOBILE MENU TEXT COLOR
+
+mobileMenuTextSameAsNav.onclick = () => {
+  mobileMenuColorTextWell.disabled = true;
+  navMobileLinks.style.color = navLinksTextWell.value;
+  cssNavMobileMenuTextColor.textContent = navLinksTextWell.value;
+  mobileMenuColorTextWell.value = navLinksTextWell.value;
+  mobileMenuColorTextWellColor.textContent = navLinksTextWell.value;
+};
+
+mobileMenuTextDifferentAsNav.onclick = () => {
+  mobileMenuColorTextWell.disabled = false;
+  changeMobileMenuTextColor();
+};
+
+function changeMobileMenuTextColor() {
+  if (mobileMenuTextDifferentAsNav.checked === true) {
+    mobileMenuColorTextWell.addEventListener('input', updateFirstNavMobileMenuTextColor, false);
+    mobileMenuColorTextWell.select();
+
+    function updateFirstNavMobileMenuTextColor(event) {
+      navMobileLinks.style.color = event.target.value;
+      cssNavMobileMenuTextColor.textContent = event.target.value;
+      mobileMenuColorTextWell.value = event.target.value;
+      mobileMenuColorTextWellColor.textContent = event.target.value;
     }
   }
 }
