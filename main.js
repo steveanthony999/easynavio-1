@@ -58,6 +58,8 @@ const cssNavMenuMobileColor = document.getElementById('css-nav-menu-mobile-color
 const cssMediaQuery = document.getElementById('css-media-query');
 const cssMediaQueryTablet = document.getElementById('css-media-query-tablet');
 const cssMediaQueryMobile = document.getElementById('css-media-query-mobile');
+const cssNavLinks = document.getElementById('css-nav-links');
+const cssNavLinksMobileDisplayText = document.getElementById('css-nav-links-mobile-display-text');
 
 const defaultColor = '#ffffff';
 
@@ -474,6 +476,9 @@ function setMenuButton(displaySize) {
     cssNavLinksMobile.style.display = 'none';
     jsNavMenu.style.display = 'none';
     cssMediaQuery.style.display = 'none';
+    menuButtonDesktop.checked = false;
+    navLinks.style.display = 'flex';
+    navLinksMobile.style.display = 'none';
   } else {
     jsNavMenu.style.display = 'block';
     cssMediaQuery.style.display = 'block';
@@ -491,6 +496,14 @@ function setMenuButton(displaySize) {
     cssMediaQueryTablet.style.display = 'block';
     cssMediaQueryMobile.style.display = 'block';
     cssNavLinksMobile.style.display = 'block';
+  }
+
+  if (menuButtonDesktop.checked === true) {
+    cssNavLinks.style.display = 'block';
+    cssNavLinksMobileDisplayText.textContent = 'block';
+  } else if (menuButtonDesktop.checked === false) {
+    cssNavLinks.style.display = 'none';
+    cssNavLinksMobileDisplayText.textContent = 'none';
   }
 }
 

@@ -239,3 +239,7 @@ a {
   width: 0%;
   left: 50%;
 }
+
+#css-nav-links {
+  display: none;
+}
