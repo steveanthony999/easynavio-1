@@ -83,10 +83,10 @@ const defaultColor = '#ffffff';
 // CHANGE LANDING PAGE BACKGROUND COLOR
 // CHANGE LANDING PAGE BACKGROUND COLOR
 
+navBuilderBg.style.background = defaultColor;
 colorWell.value = defaultColor;
 colorWell.addEventListener('input', updateFirst, false);
 colorWell.select();
-// }
 
 function updateFirst(event) {
   if (navBuilderBg) {
@@ -117,7 +117,7 @@ function getContrast(hexcolor) {
 // CHANGE NAV POSITION
 
 fixedNav.onclick = () => {
-  navbar.style.position = 'fixed';
+  navbar.style.position = 'absolute';
   cssNavPosition.textContent = 'fixed';
   if (shrinkMeCheckbox.checked === true) {
     shrinkMeCheckbox.disabled = false;
@@ -250,7 +250,7 @@ function setNavWidth(xWidth) {
     cssNavContainerWidthText.style.display = 'block';
     cssNavContainerMarginText.style.display = 'block';
     if (deviceSizeDesktop.checked === true) {
-      navLinksText.style.width = '800px';
+      navLinksText.style.width = '400px';
       navLinksText.style.margin = '0 auto';
     } else {
       navLinksText.style.width = '100%';
@@ -280,7 +280,7 @@ navHeightMedium.onclick = () => {
 };
 
 navHeightFat.onclick = () => {
-  navbar.style.padding = '32px 32px';
+  navbar.style.padding = '24px 32px';
   cssNavHeightText.textContent = '32px';
   if (cssNavPosition.textContent === 'fixed') {
     shrinkMeCheckbox.disabled = false;
@@ -292,7 +292,7 @@ navHeightFat.onclick = () => {
 };
 
 navHeightSuperFat.onclick = () => {
-  navbar.style.padding = '64px 32px';
+  navbar.style.padding = '32px 32px';
   cssNavHeightText.textContent = '64px';
   if (cssNavPosition.textContent === 'fixed') {
     shrinkMeCheckbox.disabled = false;
@@ -307,6 +307,8 @@ navHeightSuperFat.onclick = () => {
 // SHRINK NAV
 // SHRINK NAV
 
+const navWrapper = document.getElementById('nav-wrapper');
+
 cssNavTransition.style.display = 'none';
 
 shrinkMeCheckbox.onclick = () => {
@@ -319,19 +321,19 @@ shrinkMeCheckbox.onclick = () => {
   }
 };
 
-navBuilderBg.onscroll = () => {
+navWrapper.onscroll = () => {
   if (shrinkMeCheckbox.disabled === false) {
     if (shrinkMeCheckbox.checked === true) {
-      if (navBuilderBg.scrollTop > 50) {
+      if (navWrapper.scrollTop > 50) {
         navbar.style.transition = '0.4s';
         navbar.style.padding = '16px 32px';
       } else {
         if (cssNavHeightText.textContent === '32px') {
           navbar.style.transition = '0.4s';
-          navbar.style.padding = '32px 32px';
+          navbar.style.padding = '24px 32px';
         } else if (cssNavHeightText.textContent === '64px') {
           navbar.style.transition = '0.4s';
-          navbar.style.padding = '64px 32px';
+          navbar.style.padding = '32px 32px';
         }
       }
     }
@@ -438,24 +440,24 @@ function updateFirstNavHoverText(event) {
 let builderDisplaySize = 'desktop';
 
 deviceSizeDesktop.onclick = () => {
-  navBuilderBg.style.maxWidth = '80vw';
-  navbar.style.maxWidth = '80vw';
+  navBuilderBg.style.maxWidth = '100%';
+  navbar.style.maxWidth = '100%';
   builderDisplaySize = 'desktop';
   setMenuButton('desktop');
   setNavWidth(navWidthStorage);
 };
 
 deviceSizeTablet.onclick = () => {
-  navBuilderBg.style.maxWidth = '568px';
-  navbar.style.maxWidth = '568px';
+  navBuilderBg.style.maxWidth = '388px';
+  navbar.style.maxWidth = '388px';
   builderDisplaySize = 'tablet';
   setMenuButton('tablet');
   setNavWidth(navWidthStorage);
 };
 
 deviceSizeMobile.onclick = () => {
-  navBuilderBg.style.maxWidth = '400px';
-  navbar.style.maxWidth = '400px';
+  navBuilderBg.style.maxWidth = '290px';
+  navbar.style.maxWidth = '290px';
   builderDisplaySize = 'mobile';
   setMenuButton('mobile');
   setNavWidth(navWidthStorage);
@@ -639,16 +641,4 @@ function changeMobileMenuTextColor() {
       mobileMenuColorTextWellColor.textContent = event.target.value;
     }
   }
-}
-
-// COPY CODE TEXT
-// COPY CODE TEXT
-// COPY CODE TEXT
-
-const codeHtml = document.getElementById('code-html');
-
-function copyHtml() {
-  codeHtml.select();
-  codeHtml.setSelectionRange(0, 99999);
-  document.execCommand('copy');
 }
